@@ -1,4 +1,4 @@
-#/bin/sh
+#!/bin/sh
 
 #########################
 # TO DO:
@@ -71,8 +71,8 @@ pip install jupyterlab
 ###########################
 # Add aliases to .bashrc
 cat >> ~/.bashrc <<EOF
-alias jupy_ssh="cat \$(ls -r jupyter/*.out | head -1 ) | grep ssh | grep -v \""
-alias jupy_start="sbatch ~/jupyter/init.sh"
-alias jupy_url="cat \$(ls -r jupyter/*.out | head -1 ) | grep http://localhost "
+alias jupy_ssh='cat \$(ls -r jupyter/*.out | head -1 ) | grep ssh | grep -v \"'
+alias jupy_start='d=\$PWD; cd ~ && sbatch ~/jupyter/lab.sh; cd \$d'
+alias jupy_url='cat \$(ls -r jupyter/*.out | head -1 ) | grep http://localhost '
 EOF
 
