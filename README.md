@@ -186,3 +186,12 @@ Os *outputs* do servidor son redireccionados (con `sbacth --output --error`) a u
   - [ ] creación de alias
   - [ ] porto local
   - [ ] porto remoto
+- [ ] Facer instalador interactivo
+- [ ] Pór ó día a documentación  
+
+
+# Changelog
+### February 23, 2023
+- Added `.gitignore`
+- Added `ipywidgets`, `jupyterlab_slurm`, `jupyter-resource-usage`
+- Added `jupy_big`, `jupy_big`, `jupy_clean`  
