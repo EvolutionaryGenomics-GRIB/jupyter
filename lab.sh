@@ -84,7 +84,11 @@ nice -20 jupyter-lab \
         --port=${hostport} \
         --ip=0.0.0.0 \
         --ServerApp.shutdown_no_activity_timeout=86400 \
-        --ServerApp.iopub_data_rate_limit=1.0e10 
+        --ServerApp.iopub_data_rate_limit=1.0e10 \
+        --ResourceUseDisplay.mem_warning_threshold=0.1 \
+        --ResourceUseDisplay.track_cpu_percent=True \
+        --ResourceUseDisplay.enable_prometheus_metrics=False
+        
 
 
 echo 'Exit...'
