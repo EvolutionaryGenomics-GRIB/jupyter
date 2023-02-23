@@ -1,4 +1,4 @@
-#/bin/sh
+#!/bin/sh
 
 #########################
 # TO DO:
@@ -65,7 +65,7 @@ echo "Updating enviroment"
 pip install --upgrade pip
 
 echo "Installing jupyter"
-pip install jupyterlab
+pip install jupyterlab ipywidgets jupyterlab_slurm jupyter-resource-usage
 
 
 ###########################
@@ -74,5 +74,8 @@ cat >> ~/.bashrc <<EOF
 alias jupy_ssh="cat \$(ls -r jupyter/*.out | head -1 ) | grep ssh | grep -v \""
 alias jupy_start="sbatch ~/jupyter/init.sh"
 alias jupy_url="cat \$(ls -r jupyter/*.out | head -1 ) | grep http://localhost "
+alias jupy_clean="ls -r jupyter/* | grep -E ".err|.out" | xargs rm"
+alias jupy_big="sbatch --partition=bigmem --cpus-per-task=80 --mem=400GB --time=10:00:00 jupyter/lab.sh"
+alias jupy_long="sbatch --partition=long --cpus-per-task=32 --mem=120GB --time=2-00:00:00 jupyter/lab.sh"
 EOF
 
