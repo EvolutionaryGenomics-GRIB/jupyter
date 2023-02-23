@@ -194,4 +194,4 @@ Os *outputs* do servidor son redireccionados (con `sbacth --output --error`) a u
 ### February 23, 2023
 - Added `.gitignore`
 - Added `ipywidgets`, `jupyterlab_slurm`, `jupyter-resource-usage`
-- Added `jupy_big`, `jupy_big`, `jupy_clean`  
+- Added `jupy_big`, `jupy_big`, `jupy_clean`, `jupy_out`, `jupy_log`  
