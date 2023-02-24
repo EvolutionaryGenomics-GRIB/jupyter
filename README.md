@@ -170,7 +170,7 @@ Tras a instalación, terás unha serie de comandos dispoñibles para controlares
 - `jupy_ssh`: amósache o comando de `ssh` para conectar unha computadora remota ó servidor iniciado.
 - `jupy_url`: amósache a direción url na que se executa o servidor de Jupyter.
 
-O comando que facilita `jupy_ssh` **non é para executar nos nodos do *HPC*,** ten que ser executado na computadora remota que queres conectar.
+O comando que facilita `jupy_ssh` **non é para executar nos nodos do *HPC*,** ten que ser executado na computadora local dende a que te queres conectar.
 
 Os *outputs* do servidor son redireccionados (con `sbacth --output --error`) a un *log* individual no cartafol `~/jupyter`. Isto permite que se poidan executar servidores de JupyterLab en paralelo como traballos distintos sen se interrupiren uns a outros.  
 <details>

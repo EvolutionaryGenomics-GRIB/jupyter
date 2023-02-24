@@ -161,7 +161,7 @@ After installation, you will have a series of commands available to control Jupy
 - `jupy_ssh`: displays the `ssh` command to connect a remote computer to the initiated server.
 - `jupy_url`: shows the URL at which the Jupyter server is running.
 
-The command provided by `jupy_ssh` **should not be run on the HPC nodes**, it should be run on the remote computer you want to connect to.
+The command provided by `jupy_ssh` **should not be run on the HPC nodes**, it should be run on the local computer you want to connect from.
 
 The server outputs are redirected (with `sbatch --output --error`) to an individual log in the `~/jupyter` folder. This allows JupyterLab servers to be run in parallel as separate jobs without interrupting each other.
 
