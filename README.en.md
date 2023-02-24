@@ -191,9 +191,6 @@ Los outputs del servidor son redirigidos (con `sbatch --output --error`) a un lo
 - Añadido `ipywidgets`, `jupyterlab_slurm`, `jupyter-resource-usage`
 - Añadido `jupy_big`, `jupy_big`, `jupy_clean`, `jupy_out`, `jupy_log`
 
-</pre>
-
-<pre>
 Once created, you can send this identity to your user on the *HPC* so that they can recognize your local computer automatically using this file. 
 We want to do this both on the *HPC* and on the intermediate server (if we have to go through one). That is, we want to do it on `shiva` and `zeus`. This is done with the command:
 ```
