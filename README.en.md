@@ -1,8 +1,8 @@
 # **Jupyter server for `shiva`**
 
-[![gl](https://img.shields.io/badge/lang-gl-blue.svg)](./README.md)
+[![gl](https://img.shields.io/badge/lang-gl-9cf.svg)](./README.md)
 [![es](https://img.shields.io/badge/lang-es-red.svg)](./README.es.md)
-[![en](https://img.shields.io/badge/lang-en-black.svg)](./README.en.md)
+[![en](https://img.shields.io/badge/lang-en-blue.svg)](./README.en.md)
 
 Hello! This repository allows you to install JupyterLab on a system with Python installed or available through `module`, and ready to be used through `ssh`.
 
@@ -136,60 +136,6 @@ ssh-keygen
 ```
 
 
-Una vez creado, puedes enviar esta identidad a tu usuario en el *HPC* para que reconozca tu computadora local empleando este archivo automáticamente.  
-Queremos hacer esto tanto en el *HPC* como en el servidor intermedio (si tenemos que pasar por uno). Es decir, queremos hacerlo en `shiva` y en `zeus`. Esto se hace con el comando:
-```
-ssh-copy-id -i ~/.ssh/id_rsa.pub user@zeus
-ssh-copy-id -i ~/.ssh/id_rsa.pub user@shiva
-```
-**Cambia `user` por tu nombre de usuario.**  
-Por otro lado, si tu archivo de identidad no está en la ruta por defecto `~/.ssh/id_rsa.pub`, pon `ssh-copy-id -i` en la consola y presiona `TAB`. Debería autocompletarse con la ruta correcta.
-
-Prueba a conectarte sin contraseña con:
-```
-ssh shiva
-```
-# Funcionamiento
-El script `init.sh` utiliza Python disponible en el sistema para crear un entorno virtual a través de `venv` en el que se instala JupyterLab. Este script debe ser ejecutado en un nodo de computación o, asumiendo que comparten el sistema de archivos, en el nodo de acceso del cluster o HPC en el que trabajas.
-
-El script comprueba si ya hay algún entorno `conda` o `venv` activado y los desactiva en caso de que sea necesario. También comprueba si Python está disponible y, en caso contrario, intenta cargarlo con `module load Python`. La ruta del entorno que crea es `~/jupyter/venv`, siendo `~` el directorio de tu usuario.
-
-Después de la instalación, tendrás una serie de comandos disponibles para controlar Jupyter:
-- `jupy_start`: envía a la cola de SLURM el script `lab.sh` que inicia un servidor de JupyterLab.
-- `jupy_ssh`: muestra el comando de `ssh` para conectar una computadora remota al servidor iniciado.
-- `jupy_url`: muestra la dirección url en la que se ejecuta el servidor de Jupyter.
-
-El comando que proporciona `jupy_ssh` **no debe ser ejecutado en los nodos del HPC**, debe ser ejecutado en la computadora remota a la que deseas conectarte.
-
-Los outputs del servidor son redirigidos (con `sbatch --output --error`) a un log individual en la carpeta `~/jupyter`. Esto permite que se puedan ejecutar servidores de JupyterLab en paralelo como trabajos distintos sin que se interrumpan entre sí.
-
-<details>
-    <summary>Nota sobre puerto local y múltiples servidores</summary>
-        Por defecto, el puerto local es `15497`. Si deseas ejecutar varias sesiones en la misma computadora local, necesitarás utilizar un puerto diferente para cada una. Para obtener más ayuda y obtener un comando de ssh con un puerto nuevo, revisa los outputs de cualquier sesión del servidor en `~/jupyter/*.out`.
-</details>
-
-
-# To do list:
-- [ ] Crear kernels por defecto `biobox`
-- [ ] Actualizar README:
-  - [ ] Hacer multilingüe
-- [X] Poner instrucciones sobre `ssh .config`
-- [ ] Poner instrucciones sobre `kernels`
-- [ ] Modificables:
-  - [ ] nombre y ruta del entorno creado
-  - [ ] desactivación de entornos
-  - [ ] creación de alias
-  - [ ] puerto local
-  - [ ] puerto remoto
-- [ ] Hacer instalador interactivo
-- [ ] Poner al día la documentación
-
-
-# Changelog
-### 23 de febrero de 2023
-- Añadido `.gitignore`
-- Añadido `ipywidgets`, `jupyterlab_slurm`, `jupyter-resource-usage`
-- Añadido `jupy_big`, `jupy_big`, `jupy_clean`, `jupy_out`, `jupy_log`
 
 Once created, you can send this identity to your user on the *HPC* so that they can recognize your local computer automatically using this file. 
 We want to do this both on the *HPC* and on the intermediate server (if we have to go through one). That is, we want to do it on `shiva` and `zeus`. This is done with the command:

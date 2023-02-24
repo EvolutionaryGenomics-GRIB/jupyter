@@ -1,8 +1,8 @@
 # **Servidor de Jupyter para `shiva`**
 
-[![gl](https://img.shields.io/badge/lang-gl-blue.svg)](./README.md)
+[![gl](https://img.shields.io/badge/lang-gl-9cf.svg)](./README.md)
 [![es](https://img.shields.io/badge/lang-es-red.svg)](./README.es.md)
-[![en](https://img.shields.io/badge/lang-en-black.svg)](./README.en.md)
+[![en](https://img.shields.io/badge/lang-en-blue.svg)](./README.en.md)
 
 
 
@@ -197,4 +197,7 @@ Os *outputs* do servidor son redireccionados (con `sbacth --output --error`) a u
 
 # Changelog
 ### February 23, 2023
+- Added `.gitignore`
+- Added `ipywidgets`, `jupyterlab_slurm`, `jupyter-resource-usage`
+- Added `jupy_big`, `jupy_big`, `jupy_clean`, `jupy_out`, `jupy_log`  
 - Added translations (Credits to ChatGPT)
