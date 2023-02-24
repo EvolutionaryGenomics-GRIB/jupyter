@@ -81,4 +81,4 @@ alias jupy_big='sbatch --partition=bigmem --cpus-per-task=80 --mem=400GB --time=
 alias jupy_long='sbatch --partition=long --cpus-per-task=32 --mem=120GB --time=2-00:00:00 jupyter/lab.sh'
 
 EOF
-
+###########################

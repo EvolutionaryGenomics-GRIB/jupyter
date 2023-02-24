@@ -1,5 +1,10 @@
 # **Servidor de Jupyter para `shiva`**
 
+[![gl](https://img.shields.io/badge/lang-gl-blue.svg)](./README.md)
+[![es](https://img.shields.io/badge/lang-es-red.svg)](./README.es.md)
+[![en](https://img.shields.io/badge/lang-en-black.svg)](./README.en.md)
+
+
 
 Boas! Este repositorio permite a instalación de JupyterLab nun sistema con Python instalado ou dispoñível a través de `module` e prepárao para ser empregado mediante `ssh`.  
 
@@ -177,7 +182,7 @@ Os *outputs* do servidor son redireccionados (con `sbacth --output --error`) a u
 # To do list:
 - [ ] Crear kernels por defecto `biobox`
 - [ ] Actualizar README:
-  - [ ] Facer multilingua
+  - [X] Facer multilingua
 - [X] Pór instrucións sobre `ssh .config`
 - [ ] Pór instrucións sobre `kernels`
 - [ ] Modificables:
@@ -192,6 +197,4 @@ Os *outputs* do servidor son redireccionados (con `sbacth --output --error`) a u
 
 # Changelog
 ### February 23, 2023
-- Added `.gitignore`
-- Added `ipywidgets`, `jupyterlab_slurm`, `jupyter-resource-usage`
-- Added `jupy_big`, `jupy_big`, `jupy_clean`, `jupy_out`, `jupy_log`  
+- Added translations (Credits to ChatGPT)
