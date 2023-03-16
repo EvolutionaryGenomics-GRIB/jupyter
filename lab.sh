@@ -78,6 +78,8 @@ EOF
 
 # Run jupyter lab
 echo 'Lauching Jupyter Server'
+while [ 1 ]
+do
 nice -20 jupyter-lab \
         --no-browser \
         --ServerApp.token='' \
@@ -88,8 +90,7 @@ nice -20 jupyter-lab \
         --ResourceUseDisplay.mem_warning_threshold=0.1 \
         --ResourceUseDisplay.track_cpu_percent=True \
         --ResourceUseDisplay.enable_prometheus_metrics=False
-        
-
+done
 
 echo 'Exit...'
 exit
