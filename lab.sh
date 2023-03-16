@@ -3,6 +3,7 @@
 #SBATCH --job-name=JupyterLab
 #SBATCH --output=jupyter/output.%j.out
 #SBATCH --error=jupyter/output.%j.err
+#SBATCH --error=jupyter/output.%j.err
 
 
 # Needed for a bug in jupyter 
@@ -90,6 +91,9 @@ nice -20 jupyter-lab \
         --ResourceUseDisplay.mem_warning_threshold=0.1 \
         --ResourceUseDisplay.track_cpu_percent=True \
         --ResourceUseDisplay.enable_prometheus_metrics=False
+
+pkill -u $USER -f jupyter
+sleep 5
 done
 
 echo 'Exit...'
